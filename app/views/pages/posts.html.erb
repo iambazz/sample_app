@@ -1,0 +1,20 @@
+
+<table class="front" summary="For signed-in users">
+	<tr>
+			<td class="main">
+				<% if signed_in? %>
+					<h1 class="micropost">What's up?</h1>
+					<%= render 'shared/micropost_form' %>
+				<% end %>
+				<%= render 'shared/feed' %>
+			</td>
+		
+		<% if signed_in? %>
+			<td class="sidebar round">
+			
+				<%= render 'shared/user_links' %>
+			</td>
+		<% end %>
+		
+	</tr>
+</table>
