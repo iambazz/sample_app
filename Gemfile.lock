@@ -47,6 +47,9 @@ GEM
       treetop (>= 1.4.5)
     mime-types (1.16)
     nokogiri (1.4.3.1)
+    paperclip (2.3.4)
+      activerecord
+      activesupport
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -88,6 +91,7 @@ GEM
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
+    will_paginate (2.3.15)
 
 PLATFORMS
   ruby
@@ -96,8 +100,10 @@ DEPENDENCIES
   annotate-models
   factory_girl_rails
   gravatar_image_tag
+  paperclip
   rails (= 3.0.0)
   rspec (= 2.0.0.beta.18)
   rspec-rails (= 2.0.0.beta.18)
   spork (= 0.8.4)
   sqlite3-ruby
+  will_paginate

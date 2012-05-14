@@ -1,9 +1,11 @@
 SampleApp::Application.routes.draw do
   get "sessions/new"
+  get "stories/set_story_title"
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
+  resources :stories
   #get "users/new"
 
   match '/signup', :to => 'users#new'
@@ -13,7 +15,18 @@ SampleApp::Application.routes.draw do
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
   match '/posts', :to => 'pages#posts'
-
+  
+  # AJAX
+  #match 'update_country_select/:id', :controller => 'users', :action => 'update_country_select'
+  
+  # Stories
+  match '/new_story', :to => 'stories#new'
+  match '/stories', :to => 'stories#show'
+  match '/my_stories', :to => 'stories#my_stories'
+  #match '/update_story', :to => 'stories#edit'
+  
+  #Microposts (comments)
+  match '/my_comments', :to => 'microposts#my_comments'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,24 +1,36 @@
-<table class="front" summary="Profile information">
-	<tr>
-		<td class="main">
+<div class="whitesidebar round">
+	<% if signed_in? %>
+		<div class="colorbar round">
+			<%= render 'shared/user_links' %>
+		</div>
+	<% end %><br />
+	<div style="padding-left: 1em">
+		<strong>Name</strong> <%= @user.name %><br />
+		<strong>URL</strong> <%= link_to user_path(@user), @user %><br />
+		<strong>Stories</strong> <%= @user.stories.count %><br />
+		<strong>Comments</strong> <%= @user.microposts.count %><br /><br />
+	</div>
+	
+</div>
+<div>
 			<h1>
 				<%= gravatar_for @user %>
 				<%= @user.name %>
 			</h1>
-			
-			<% unless @user.microposts.empty? %>
-				<table class="microposts" summary="User microposts">
-					<%= render @microposts %>
+			<% unless @user.stories.empty? %>
+				<table class="stories" style="width: 65.5%;">
+					<%= render @user.stories %>
 				</table>
+				<%= will_paginate @stories%>
 			<% end %>
-		</td>
-		<td class="sidebar round">
-			<strong>Name</strong> <%= @user.name %><br />
-			<strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-			<strong>Microposts</strong> <%= @user.microposts.count %><br /><br />
-			<% if signed_in? %>
-				<%= render 'shared/user_links' %>
+			<% unless @user.microposts.empty? %>
+				<strong><u class="stories">Comments</u></strong>
+				<table class="microposts" style="width:65.5%; vertical-align:top" summary="User microposts">
+					<%= render @user.microposts %>
+				</table>
+				<%= will_paginate @microposts %>
 			<% end %>
-		</td>
+		</div>
+		
 	</tr>
 </table>

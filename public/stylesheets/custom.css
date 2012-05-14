@@ -71,13 +71,32 @@ td.main {
 	padding: 1em;
 }
 
-td.sidebar {
+tr.story {
+	width: 70%;
+	overflow:hidden;
+	right: 70%;
+}
+
+.content { min-height: 10em;}
+.sidebar {
 	width: 30%;
 	padding: 1em;
 	vertical-align: top;
 	background: #ffc;
+	float:right;
 }
 
+.colorbar {
+	background: #ffc;
+	padding: 1em;
+}
+.whitesidebar {
+	width: 30%;
+	padding: 1em;
+	vertical-align: top;
+	background: #fff;
+	float:right;
+}
 .profile img.gravatar {
 	border: 1px solid #999;
 	margin-bottom: -15px;
@@ -242,3 +261,82 @@ form.new_micropost textarea {
   height: 4em;
   margin-bottom: 0;
 }
+
+/*Story CSS */
+.back_link {
+	float: right;
+}
+.story_author {
+	vertical-align: bottom;
+	font-size: 90%;
+}
+
+.photo {
+	margin-left:auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+}
+
+.story_time {
+	font-size: 90%;
+}
+.story_title h1 {
+	margin-bottom: -14px;
+}
+
+.new_story_link {
+	float:right;
+}
+
+.delete_story { float: right;}
+
+.USA { background: #FF0000;}
+.story_content {
+	/*border: dashed 1px;*/
+	background-color: #FF5678;
+	
+}
+
+/* user signup */
+.formname {
+	margin-top: -10px;
+}
+
+.comment_link {
+	color:#000000;
+}
+
+a:visited.comment_link   {
+	color :#000000;
+}
+
+a.comment_link  {
+	color :#000000;
+}
+
+.push {
+	margin-left: 1em;
+}
+
+.pushback {
+	margin-left: -.8em;
+}
+
+.radiotime {
+	margin-bottom: -10px;
+	padding-right: 1em;
+}
+
+.radiomood {
+	margin-bottom: -10px;
+	padding-right: .5em;
+	padding-top: .5em;
+}
+
+.time {
+	margin-bottom: -5px;
+}
+
+.mood { margin-bottom: -7px;
+	padding-top: 3px;}

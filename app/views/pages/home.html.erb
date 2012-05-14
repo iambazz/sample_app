@@ -2,19 +2,21 @@
 	<table class="front" summary="For signed-in users">
 		<tr>
 			<td class="main">
-				<h1 class="micropost">What's up?</h1>
-				<%= render 'shared/micropost_form' %>
-				<%= render 'shared/feed' %>
-			</td>
-			<td class="sidebar round">
-				<%= render 'shared/user_links' %>
+				<div class="sidebar round">
+					<%= render 'shared/user_links' %>
+				</div>
+				<h1 class="micropost">What's your story?</h1>
+				<%= render 'shared/story_form' %>
+				
+			
+			
 			</td>
 		</tr>
 	</table>
 <% else %>
-	<h1>Sample App</h1>
+	<h1>My Story</h1>
 	<p>
-		This is the home page for the <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+		This is the home page for MyStory, where you can share your story with the world!!
 	</p>
 
 	<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>

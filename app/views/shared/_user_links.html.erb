@@ -3,11 +3,27 @@
 		<%= gravatar_for current_user, :size=>30 %>
 		<span class="user_name">
 			<%= current_user.name %>
+		</span></a>
+		<span class="microposts"><!-- not really -->
+			<% if current_user.stories.any? %>
+				<a href="<%= my_stories_path %>"><%= pluralize(current_user.stories.count, "story") %></a>
+			<% else %>
+				<%= pluralize(current_user.stories.count, "story") %>
+			<% end %>
 		</span>
 		<span class="microposts">
-			<%= pluralize(current_user.microposts.count, "micropost") %>
+			<% if current_user.microposts.any? %>
+				<a href="<%= my_comments_path %>"><%= pluralize(current_user.microposts.count, "comment") %></a>
+			<% else %>
+				<%= pluralize(current_user.microposts.count, "comment") %>
+			<% end %>
 		</span>
-	</a>
+	
+</div><br />
+<div>
+	<%= link_to "New Story", root_path %>
+</div>
+<div>
 </div>
 <div>
 	<%= link_to "Profile", current_user %><br/>

@@ -7,7 +7,10 @@ gem 'rails', '3.0.0'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'gravatar_image_tag'
-
+# gem "formtastic", :git => "git://github.com/justinfrench/formtastic.git", :branch => "master"
+gem 'will_paginate'
+gem 'paperclip'
+#gem 'in_place_editing', :git => "git://github.com/rails/in_place_editing.git"
 group :development do
 	gem 'rspec-rails', '2.0.0.beta.18'
 	gem 'annotate-models'
