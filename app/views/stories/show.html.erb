@@ -1,0 +1,25 @@
+<td class="main">	
+	<td class="story">
+		<%= render :partial => 'one_story'%>
+		<% if current_user?(@story.user) %>
+		  <td>
+			<%= link_to "update", edit_story_path(@story) %> | 
+			<%= link_to "delete", @story, :method => :delete, :confirm => "You sure?", :title => @story.title %> | 
+		  </td>
+		  <% end %>
+		<td><%= link_to "back", :back %></td>
+	</td>
+</td>	
+	<table class="front" summary="For signed-in users">
+		<tr>
+			<td class="main">
+				<% if signed_in? %>
+					<h1 class="micropost">Write Something!</h1>
+					<%= render 'shared/micropost_form' %>
+				<% end %>
+				<%= render 'shared/feed' %>
+			</td>
+			
+		</tr>
+	</table>
+	

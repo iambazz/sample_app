@@ -1,0 +1,20 @@
+<div id="story<%= story.id %>">
+<tr class="story">
+	<td>
+		<a href="/stories/<%= story.id %>"><span class="story_title"><h1><%= image_tag "#{story.time}.png", :size => "31x30", :class=>'time' %> <%= story.title %></h1></span><%= image_tag "moods/#{story.mood}.png", :size=> "31x30", :class=>'mood'%></a><br />
+		<span class="story_author">Author: <a href="/users/<%= story.user.id %>"><%= story.user.name %></a> 
+		<br />
+			Posted <b><%= time_ago_in_words(story.created_at) %></b> ago. 
+			<% if current_user?(story.user) %>
+					<%= link_to "update", edit_story_path(story) %> | 
+					<%= link_to "delete", story, :method => :delete, :confirm => "You sure?", :title => story.title, :remote=>true %>
+				  <% end %>
+		</span>
+		
+		<br /><!--===============================================-->
+		
+	</td>
+
+	
+</tr>
+</div>

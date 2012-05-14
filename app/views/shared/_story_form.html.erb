@@ -1,0 +1,75 @@
+<%= form_for @story, :html => { :multipart => true } do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<div class="field">
+		<%= f.label :title %><br />
+		<%= f.text_field :title %>
+	</div>
+	<div class="field">
+		<%= f.label :content %><br />
+		<%= f.text_area :content %>
+	</div>
+	<div class="field">
+		<%= f.label :time %>
+		<%= f.radio_button :time, "day", :class=>'push', :checked=>true %><%= image_tag 'day.png', :class=>'radiotime', :alt=>'day' %>
+		<%= f.radio_button :time, "night" %><%= image_tag 'night.png', :size => "41x41", :class=>'radiotime', :alt =>'night' %>
+		<%= f.radio_button :time, "rainy" %><%= image_tag 'rainy.png', :size => "41x41", :class=>'radiotime', :alt=>'rainy' %>
+	</div>
+	<div class="field">
+		<%= f.label :mood %>
+		<%= f.radio_button :mood, 'happy', :class=>'push', :checked=>true %>
+			<%= image_tag 'moods/happy.png', :size=>"30x30", :class=>'radiomood', :alt => "happy" %>
+		<%= f.radio_button :mood, 'evil' %>
+			<%= image_tag 'moods/evil.png', :size=>"30x30", :class=>'radiomood', :alt=>'evil' %>
+		<%= f.radio_button :mood, 'cry' %>
+			<%= image_tag 'moods/XD.png', :size=>"30x30", :class=>'radiomood', :alt=>'XD' %>
+		<%= f.radio_button :mood, 'XD' %>
+			<%= image_tag 'moods/sad.png', :size=>"30x30", :class=>'radiomood', :alt=>'sad' %>
+		<%= f.radio_button :mood, 'toohappy' %>
+			<%= image_tag 'moods/toohappy.png', :size=>"30x30", :class=>'radiomood', :alt=>'toohappy' %><br />
+			
+		<%= f.radio_button :mood, 'pissed' %>
+			<%= image_tag 'moods/pissed.png', :size=>"30x30", :class=>'radiomood',:alt=>'pissed' %>
+		<%= f.radio_button :mood, 'wah', :class=>'pushback' %>
+			<%= image_tag 'moods/wah.png', :size=>"30x30", :class=>'radiomood', :alt=>'wah' %>
+		<%= f.radio_button :mood, 'suspicious' %>
+			<%= image_tag 'moods/suspicious.png', :size=>"30x30", :class=>'radiomood', :alt=>'suspicious' %>
+		<%= f.radio_button :mood, 'cry' %>
+			<%= image_tag 'moods/cry.png', :size=>"30x30", :class=>'radiomood', :alt=>'cry' %>
+		<%= f.radio_button :mood, 'snooty' %>
+			<%= image_tag 'moods/snooty.png', :size=>"30x30", :class=>'radiomood', :alt=>'snooty' %>
+		<%= f.radio_button :mood, 'dead' %>
+			<%= image_tag 'moods/dead.png', :size=>"30x30", :class=>'radiomood', :alt=>'dead' %><br />
+			
+		<%= f.radio_button :mood, 'what' %>
+			<%= image_tag 'moods/what.png', :size=>"30x30", :class=>'radiomood', :alt=>'what?' %>
+		<%= f.radio_button :mood, 'boss', :class=>'pushback' %>
+			<%= image_tag 'moods/boss.png', :size=>"30x30", :class=>'radiomood', :alt=>'boss' %>
+		<%= f.radio_button :mood, 'sick' %>
+			<%= image_tag 'moods/sick.png', :size=>"30x30", :class=>'radiomood', :alt=>'sick' %>
+		<%= f.radio_button :mood, 'omg' %>
+			<%= image_tag 'moods/omg.png', :size=>"30x30", :class=>'radiomood', :alt=>'omg' %>
+		<%= f.radio_button :mood, 'ninja' %>
+			<%= image_tag 'moods/ninja.png', :size=>"30x30", :class=>'radiomood', :alt=>'ninja' %>
+		<%= f.radio_button :mood, 'love' %>
+			<%= image_tag 'moods/love.png', :size=>"30x30", :class=>'radiomood', :alt=>'love' %><br />
+			
+		<%= f.radio_button :mood, 'hearts' %>
+			<%= image_tag 'moods/hearts.png', :size=>"30x30", :class=>'radiomood', :alt=>'hearts' %>
+		<%= f.radio_button :mood, 'embarrassed', :class=>'pushback' %>
+			<%= image_tag 'moods/embarrassed.png', :size=>"30x30", :class=>'radiomood', :alt=>'embarrassed' %>
+		<%= f.radio_button :mood, 'confused' %>
+			<%= image_tag 'moods/confused.png', :size=>"30x30", :class=>'radiomood', :alt=>'confused' %>
+		<%= f.radio_button :mood, 'grin' %>
+			<%= image_tag 'moods/grin.png', :size=>"30x30", :class=>'radiomood', :alt=>'grin' %><br /><br />
+		<br />
+		<%= f.label :photo %>		
+		<%= f.file_field :photo %><br />
+		<%= check_box_tag :photo_rights %>
+		<%= label :photo_rights, "You own the rights to distribute this image" %><br />
+			
+			
+	</div>
+	<div class="actions">
+		<%= f.submit "Submit Story" %>
+	</div>
+<% end %>

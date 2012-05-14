@@ -1,0 +1,3 @@
+$('microposts').insert( { top: "<%= escape_javascript(render :partial=>'shared/feed_item', :object => @micropost) %>" } ); // Insert the _comment partial at the bottom of the comments list
+$$('.comment').first().highlight(); // Highlight the last comment (the one you just inserted!)
+$('micropost_field').clear(); // Clear the form text area

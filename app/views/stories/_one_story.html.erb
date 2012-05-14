@@ -1,0 +1,24 @@
+<% story = @story %>		
+		<span class="story_title"><h1><%= image_tag "#{@story.time}.png", :size => "31x30", :class=>'time' %> <%= in_place_editor_field :story, :title %><!--<%= @story.title %>--></h1></span><%= image_tag "moods/#{@story.mood}.png", :size=> "31x30", :class=>'mood'%>
+		<% if @story.photo? %>
+			<div class="photo">
+				<%= image_tag @story.photo.url(:small), :class => 'photo round' %>
+				<span class="story_author">
+					<span style="margin-top:-5px">Author: </span>
+					<a href="/users/<%= @story.user.id %>"><%= @story.user.name %></a>
+				</span>
+			</div>
+		<% else %>
+			<div class="photo" style="text-align:left">
+				<span class="story_author">
+					<span style="margin-top:-5px">Author: </span>
+					<a href="/users/<%= @story.user.id %>"><%= @story.user.name %></a>
+				</span>
+			</div>
+		<% end %>
+		 
+		<br /><br />
+		<span class="story_content"><%= simple_format(@story.content) %></span><br/>
+		<span class="timestamp">
+			Posted <b><%= time_ago_in_words(@story.created_at) %></b> ago.
+		</span>

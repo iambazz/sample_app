@@ -1,0 +1,10 @@
+<% if signed_in? %>
+<div class="sidebar round">
+	<%= render 'shared/user_links' %>
+</div>
+<% end %>
+<%= render :partial => 'story', :collection => @story %>
+	
+
+
+

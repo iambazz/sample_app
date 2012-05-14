@@ -1,0 +1,24 @@
+
+<tr class="comment" id="micropost<%= myfeed_item.id %>">
+  
+  <td class="gravatar">
+    <%= link_to gravatar_for(myfeed_item.user), myfeed_item.user %>
+  </td>
+  <td class="micropost">
+    <span class="user">
+      <%= link_to myfeed_item.user.name, myfeed_item.user %>
+    </span>
+    <span class="content"><a href="/stories/<%= myfeed_item.story_id %>/#micropost<%= myfeed_item.id %>" class="comment_link"><%= myfeed_item.content %></a></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(myfeed_item.created_at) %> ago.
+    </span>
+  </td>
+  
+	<td>
+  	<% if current_user?(myfeed_item.user) %>
+         <%= link_to "delete", myfeed_item, :method => :delete,
+                                     :confirm => "You sure?",
+                                     :title => myfeed_item.content, :remote=>true, :class => "delete" %>
+    <% end%>
+	</td>
+</tr>
